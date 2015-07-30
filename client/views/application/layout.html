@@ -1,12 +1,11 @@
 <template name="layout">
-    <div class="container">
-        <header class="navbar">
-            <div class="navbar-inner">
-                <a class="brand" href="{{pathFor 'postsList'}}">Microscope</a>
+    {{> header}}
+    
+    <div class="container">        
+        <div class="row">
+            <div class="col-md-12">
+                {{> yield}}                
             </div>
-        </header>
-        <div class="row-fluid" id="main">
-            {{> yield}}
         </div>
     </div>
 </template>
