@@ -1,11 +1,12 @@
 <template name="postItem">
-    <div class="post">
-        <div class="post-content">
-            <h3>
-                <a href="{{url}}">{{title}}</a>
-                <span>{{domain}}</span>
-            </h3>
-        </div>
-        <a href="{{pathFor 'postPage'}}" class="discuss btn">Discuss</a>
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <a href="{{pathFor 'postPage'}}">{{title}}</a>
+        </h4>
+        <small>
+            <a href="{{url}}" target="_blank">{{domain}}</a>
+        </small>
+        
+        <!--<p class="list-group-item-text">...</p>-->
     </div>
 </template>
