@@ -1,5 +1,9 @@
 Posts = new Meteor.Collection('posts');
 
+Posts.allow({
+	remove: permissions.ownsDocument
+});
+
 Meteor.methods({
 	insert: function(post) {
 		var loggedInUser = Meteor.user();

@@ -5,6 +5,11 @@ Template.postEdit.events({
 		alert('form submitted');
 	},
 	'click #delete-post-button': function(e) {
-		alert(confirm('Are you sure?'));
+		e.preventDefault();
+		
+		if (confirm('Do you really want to remove this post?')) {
+			Posts.remove(this._id);
+			Router.go('postsList');
+		}
 	}
 });
