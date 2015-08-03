@@ -37,7 +37,7 @@ Posts.allow({
 });
 
 Meteor.methods({
-	insert: function(post) {
+	insertPost: function(post) {
 		var loggedInUser = Meteor.user();
 		
 		postValidation.validate(post);

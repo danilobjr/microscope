@@ -9,7 +9,7 @@ Template.postNew.events({
 			title: form.find('#title').val()
 		};
 		
-		Meteor.call('insert', post, function(error, id) {
+		Meteor.call('insertPost', post, function(error, id) {
 			if (error) {
 				return alert(error.reason);
 			}
