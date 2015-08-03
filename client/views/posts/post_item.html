@@ -2,6 +2,11 @@
     <div class="list-group-item">
         <h4 class="list-group-item-heading">
             <a href="{{pathFor 'postPage'}}">{{title}}</a>
+            {{#if currentUserIsOwner}}
+                <small class="pull-right">
+                    <a href="{{pathFor 'postEdit'}}">Edit</a>
+                </small>
+            {{/if}}
         </h4>
         <small>
             <a href="{{url}}" target="_blank">{{domain}}</a>

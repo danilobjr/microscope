@@ -3,5 +3,8 @@ Template.postItem.helpers({
         var anchor = document.createElement('a');
         anchor.href = this.url;
         return anchor.hostname;
-    }
+    },
+    currentUserIsOwner: function() {
+		return this.userId === Meteor.userId();
+	}
 });
