@@ -1,0 +1,21 @@
+#toast-container > div {
+    box-shadow: 0 0 12px #000000;
+    -webkit-box-shadow: 0 0 12px #000000;
+	-moz-box-shadow: 0 0 12px #000000;
+	opacity: 1;
+}
+
+.toast-message {
+	color: #9d9d9d !important;
+}
+
+.toast-success,
+.toast-error,
+.toast-info,
+.toast-warning {
+	background-color: #222;
+}
+
+.toast-top-right {
+    top: 64px;
+}
