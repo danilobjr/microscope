@@ -12,9 +12,9 @@ Template.postEdit.events({
 		
 		Meteor.call('updatePost', postAttributes, function(error, result) {
 			if (error) {
-				alert(error.reason);
+				toastr.warning(error.reason);
 			} else {
-				alert('Post updated successfully');
+				toastr.success('Post updated');
 			}
 		});
 	},
@@ -24,6 +24,7 @@ Template.postEdit.events({
 		if (confirm('Do you really want to remove this post?')) {
 			Posts.remove(this._id);
 			Router.go('postsList');
+			toastr.success('Post removed');
 		}
 	}
 });

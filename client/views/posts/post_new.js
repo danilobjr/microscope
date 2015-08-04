@@ -11,10 +11,11 @@ Template.postNew.events({
 		
 		Meteor.call('insertPost', post, function(error, id) {
 			if (error) {
-				return alert(error.reason);
+				return toastr.error(error.reason);
 			}
 			
 			Router.go('postPage', { _id: id });
+			toastr.success('Post created');
 		});		
 	}
 });
