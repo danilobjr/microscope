@@ -8,6 +8,11 @@ Template.postItem.helpers({
 		return this.userId === Meteor.userId();
 	},
     commentsCount: function() {
-        return Comments.find({ postId: this._id }).count();
+        var result = '';
+        
+        if (!this.commentsCount) { return 'No comments'; }
+        if (this.commentsCount === 1) { return '1 comment'; }
+        
+        return this.commentsCount + ' comments';
     }
 });

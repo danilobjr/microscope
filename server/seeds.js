@@ -20,14 +20,15 @@ if (Posts.find().count() === 0) {
         url: 'http://sachagreif.com/introducing-telescope/',
         userId: sacha._id,
         author: sacha.profile.name,
-        submitted: now - 7 * 3600 * 1000
+        createdAt: now - 7 * 3600 * 1000,
+        commentsCount: 2
     });
 
     Comments.insert({
         postId: telescopeId,
         userId: tom._id,
         author: tom.profile.name,
-        submitted: now - 5 * 3600 * 1000,
+        createdAt: now - 5 * 3600 * 1000,
         body: 'Interesting project Sacha, can I get involved?'
     });
 
@@ -35,7 +36,7 @@ if (Posts.find().count() === 0) {
         postId: telescopeId,
         userId: sacha._id,
         author: sacha.profile.name,
-        submitted: now - 3 * 3600 * 1000,
+        createdAt: now - 3 * 3600 * 1000,
         body: 'You sure can Tom!'
     });
 
@@ -44,7 +45,8 @@ if (Posts.find().count() === 0) {
         url: 'http://meteor.com',
         userId: tom._id,
         author: tom.profile.name,
-        submitted: now - 10 * 3600 * 1000
+        createdAt: now - 10 * 3600 * 1000,
+        commentsCount: 0
     });
 
     Posts.insert({
@@ -52,6 +54,7 @@ if (Posts.find().count() === 0) {
         url: 'http://themeteorbook.com',
         userId: tom._id,
         author: tom.profile.name,
-        submitted: now - 12 * 3600 * 1000
+        createdAt: now - 12 * 3600 * 1000,
+        commentsCount: 0
     });
 }
