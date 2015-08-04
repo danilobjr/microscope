@@ -52,9 +52,7 @@ Meteor.methods({
 		
 		return postId;
 	},
-	updatePost: function(postAttributes) {
-		console.log(postAttributes);
-		
+	updatePost: function(postAttributes) {		
 		var originalPost = Posts.findOne(postAttributes._id);
 		
 		postAttributes = _.extend(originalPost, postAttributes);		
