@@ -2,5 +2,12 @@
     <div class="page-header">
         <h1>Post <small>show</small></h1>
     </div>
+    
     {{> postItem}}
+    
+    <ul>
+        {{#each comments}}
+            {{> comment}}
+        {{/each}}
+    </ul>
 </template>
