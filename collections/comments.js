@@ -28,6 +28,12 @@ Meteor.methods({
 		
 		Posts.update(commentProperties.postId, { $inc: { commentsCount: 1 } })
 		
+		var post = Posts.findOne(commentProperties.postId);
+		
+		if (Meteor.userId() !== post.userId) {
+			Meteor.call('generateNotificationForComment', commentProperties.postId, post.userId);
+		}
+		
 		return commentId;
 	}
 })
